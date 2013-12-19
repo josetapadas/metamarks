@@ -108,12 +108,36 @@
   </script>
 
   <script type="text/x-handlebars" id="metamark/edit">
-    <div id="metamark-edit" class="alert alert-success">
+    <div class="row"><div id="metamark-edit" class="alert alert-success">
       <p><h4>Enter your metamark information:</h4></p>
       <p>{{input value=name class="form-control" placeholder="metamark name"}}</p>
       <p>{{input value=url class="form-control" placeholder="metamark URL"}}</p>
       <p>{{textarea value=description class="form-control" placeholder="metamark short description..."}}</p>
       <p><button {{action "save"}} class="btn btn-lg btn-success btn-block">Save</button></p>
+    </div>
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="metamarks/create">
+    <div class="modal" id="create-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Add a new metamark:</h4>
+          </div>
+          <div class="modal-body">
+            <div id="metamark-create">
+              <p>{{input value=name class="form-control" placeholder="metamark name"}}</p>
+              <p>{{input value=url class="form-control" placeholder="metamark URL"}}</p>
+              <p>{{textarea value=description class="form-control" placeholder="metamark short description..."}}</p>              
+            </div>
+          </div>
+          <div class="modal-footer">
+            <p><button {{action "save"}} class="btn btn-lg btn-success btn-block">Add</button></p>            
+            <a href="#" class="btn btn-default btn-lg btn-block">Cancel</a>
+          </div>
+        </div>
+      </div>        
     </div>
   </script>
 

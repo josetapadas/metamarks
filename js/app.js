@@ -33,11 +33,6 @@ App.MetamarksRoute = Ember.Route.extend({
 App.MetamarksCreateRoute = Ember.Route.extend({
   model: function() {
     return Em.Object.create({});
-  },
-  renderTemplate: function() {
-    this.render('metamark.edit', {
-      controller: 'metamarksCreate'
-    });
   }
 });
 
@@ -151,5 +146,11 @@ App.MetamarksCreateController = Ember.ObjectController.extend({
 
       this.transitionToRoute('metamark', new_metamark);
     }
+  }
+});
+
+App.MetamarksCreateView = Ember.View.extend({
+  didInsertElement: function() {
+    $('#create-modal').show();
   }
 });
