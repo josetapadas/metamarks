@@ -79,6 +79,8 @@
 
   <script type="text/x-handlebars" id="metamark">
     <div id="metamark-profile" class="col-xs-12 col-md-8">
+      {{outlet}}
+      
       {{#if delete_mode}}
         <div id="delete-confirm">
           <div class="alert alert-error">
@@ -102,8 +104,6 @@
             <button {{action "delete"}} class="btn btn-lg btn-block">Delete</button>
           </span> 
       </div>
-    
-      {{outlet}}
     </div>
   </script>
 
