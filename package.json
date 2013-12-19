@@ -1,0 +1,32 @@
+{
+  "name": "metamarks",
+  "description": "metamarks application",
+  "version": "0.1.0",
+  "dependencies": {
+    "express": "3.x"
+  },
+  "main": "leserver.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node leserver.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josetapadas/metamarks.git"
+  },
+  "keywords": [
+    "bookmarks",
+    "emberjs",
+    "node"
+  ],
+  "author": "jose tapadas alves",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/josetapadas/metamarks/issues"
+  },
+  "engines": {
+    "node": "0.8.x",
+    "npm": "1.2.x"
+  }
+}
