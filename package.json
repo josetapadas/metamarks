@@ -8,6 +8,7 @@
   "main": "leserver.js",
   "devDependencies": {},
   "scripts": {
+    "start": "node leserver.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,10 +24,9 @@
   "license": "BSD",
   "bugs": {
     "url": "https://github.com/josetapadas/metamarks/issues"
-  }
-}
-{
+  },
   "engines": {
-    "node": "0.10.x"
+    "node": "0.8.x",
+    "npm": "1.2.x"
   }
 }
