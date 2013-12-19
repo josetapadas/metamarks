@@ -4,8 +4,8 @@ metamarks
 A meta-bookmarks manager.
 
 With this tool you will able to organize your bookmarks:
-- All bookmark information is stored in your browser's local storage
-- Content is automatically embeded in the bookmark's information (videos, images, ...)
+- Metamarks information is stored in your browser's local storage
+- Content is automatically embeded in the metamarks's information (videos, images)
 
 To use it just open `index.html` in your browser.
 
