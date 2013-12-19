@@ -20,7 +20,7 @@
         <div class="navbar-collapse collapse navbar-collapse-03">       
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="#">About</a>
+              {{#link-to 'about'}}About{{/link-to}}
             </li>
           </ul>
         </div>
@@ -139,6 +139,17 @@
         </div>
       </div>        
     </div>
+  </script>
+
+  <script type="text/x-handlebars" id="about">
+    <h2><span class="fui-book"></span> A meta-bookmarks manager.</h1>
+
+    <p class="lead">Client side JavaScript application to help you organize your own bookmarks. Featuring:<p>
+    <ul>
+      <li>Metamarks information is stored in your browser's local storage</li>
+      <li>Content is automatically embeded in the metamark's information (videos, images)</li>
+    </ul>
+    <p>Feel free to send me feedback at <a href="http://www.twitter.com/tapadasalves">@tapadasalves</a> and contribute to the project on <a href="https://github.com/josetapadas/metamarks">github</a>.</p>
   </script>
 
   <script src="js/libs/jquery-1.10.2.js"></script>

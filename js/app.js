@@ -9,6 +9,7 @@ Ember.Handlebars.registerBoundHelper('pretty_date', function(date) {
 ///////////
 
 App.Router.map(function() {
+  this.resource('about');
   this.resource('metamarks', function() {
     this.resource('metamark', { path: '/:metamark_id' }, function() {
       this.route('edit');
