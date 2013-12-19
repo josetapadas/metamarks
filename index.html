@@ -85,22 +85,21 @@
             <h4>Y U Delete?</h4>
             <p>Are you sure you want to delete "{{name}}"?</p>
             <span>
-              <button {{action "do_delete"}} class="btn">Yes</button>
-              <button {{action "cancel_delete"}} class="btn">No</button>
+              <button {{action "do_delete"}} class="btn btn-lg btn-danger btn-block">Yes</button>
+              <button {{action "cancel_delete"}} class="btn btn-lg btn-block">No</button>
             </span>
           </div>
         </div>
       {{/if}}
 
-      <div class="alert alert-success">
+      <div class="alert alert-info">
         <span>
-          <h4>{{name}}</h4>
-            <a {{bindAttr href="url"}} target="_blank">{{{ get_content }}}</a>
-          <p>{{description}}</p>
-          <p>Created {{pretty_date created_at}}</p>
+          <p><h4>{{name}}</h4> <i>{{pretty_date created_at}}</i></p>
+          <p><a {{bindAttr href="url"}} target="_blank">{{{ get_content }}}</a></p>
+          <p class="lead">{{description}}</p>
           <span>
-            <button {{action "edit"}} class="btn">Edit</button>
-            <button {{action "delete"}} class="btn">Delete</button>
+            <button {{action "edit"}} class="btn btn-lg btn-info btn-block">Edit</button>
+            <button {{action "delete"}} class="btn btn-lg btn-block">Delete</button>
           </span> 
       </div>
     
@@ -109,12 +108,12 @@
   </script>
 
   <script type="text/x-handlebars" id="metamark/edit">
-    <div id="metamark-edit" class="alert alert-info">
+    <div id="metamark-edit" class="alert alert-success">
       <p><h4>Enter your metamark information:</h4></p>
       <p>{{input value=name class="form-control" placeholder="metamark name"}}</p>
       <p>{{input value=url class="form-control" placeholder="metamark URL"}}</p>
       <p>{{textarea value=description class="form-control" placeholder="metamark short description..."}}</p>
-      <p><button {{action "save"}} class="btn">Save</button></p>
+      <p><button {{action "save"}} class="btn btn-lg btn-success btn-block">Save</button></p>
     </div>
   </script>
 
