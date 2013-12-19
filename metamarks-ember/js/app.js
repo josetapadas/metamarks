@@ -78,7 +78,7 @@ App.MetamarkController = Ember.ObjectController.extend({
   delete_mode: false,
   get_content: function() {
     var url = this.get('model.url');
-    var url_matcher = /http:\/\/(.*)\/(.*)$/;
+    var url_matcher = /http[s]{0,1}:\/\/(.*)\/(.*)$/;
     var content = url;
 
     var url_parts = url.match(url_matcher);
@@ -86,7 +86,7 @@ App.MetamarkController = Ember.ObjectController.extend({
 
     if(url_parts.length > 1) {
       if(url_parts[0].match(/youtube/)) {
-        var youtube_matcher = /http:\/\/.*\/.*v=(.*).*/
+        var youtube_matcher = /http[s]{0,1}:\/\/.*\/.*v=(.*).*/
         var youtube_id_matches = url.match(youtube_matcher);
         
         if(youtube_id_matches) {
