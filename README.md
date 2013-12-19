@@ -4,17 +4,24 @@ metamarks
 A meta-bookmarks manager.
 
 With this tool you will able to organize your bookmarks:
-- All bookmark information is stored on the browser's local storage
+- All bookmark information is stored in your browser's local storage
 - Content is automatically embeded in the bookmark's information (videos, images, ...)
 
 To use it just open `index.html` in your browser.
 
-TODO
+screenshots
+===========
+<br/>
+<p align="center"><img width="400" src="https://raw.github.com/josetapadas/metamarks/master/img/screenshot3.png"></p>
+<p align="center"><img width="400" src="https://raw.github.com/josetapadas/metamarks/master/img/screenshot2.png"></p>
+<p align="center"><img width="400" src="https://raw.github.com/josetapadas/metamarks/master/img/screenshot1.png"></p>
+
+todo
 ====
 
 - Create tests
 - Social sharing.
-- Bookmark import/export.
+- Bookmarks import/export.
 
 About
 =====
