@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>metamarks</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link  rel="stylesheet" href="css/bootstrap.css">
+  <link  rel="stylesheet" href="css/flat-ui.css">
+
+</head>
+<body>
+  <script type="text/x-handlebars" id="application">
+    <div class="container">
+      <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-collapse-03"></button>
+          <a href="#" class="navbar-brand"><span class="fui-book"></span> metamarks</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-collapse-03">       
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      {{outlet}}
+    </div>
+    <br/>
+
+  <div class="bottom-menu bottom-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 navbar-brand">
+          <a href="#" class="navbar-brand"><span class="fui-book"></span> metamarks</a>
+        </div>
+
+        <div class="col-md-6">
+          <ul class="bottom-links">
+            <li>Created by <a href="mailto:jose.tapadas@gmail.com">José Tapadas Alves</a>, powered by <a href="http://www.emberjs.com" target="_blank">EmberJS</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-2">
+          <ul class="bottom-icons">
+            <li><a href="http://www.twitter.com/tapadasalves" target="_blank" class="fui-twitter"></a></li>
+            <li><a href="http://www.github.com/josetapadas" target="_blank">github</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  </script>
+
+  <script type="text/x-handlebars" id="metamarks">
+    <div class="row">
+      <div id="metamarks-list" class="col-xs-12 col-md-4">
+        <div id="metamarks-links">
+          <ul class="nav nav-list">
+            <li class="nav-header">Your metamarks ({{metamarks_count}})</li>
+            {{#each metamark in controller}}
+              <li>
+              {{#link-to "metamark" metamark}}
+                {{metamark.name}}
+              {{/link-to}}
+              </li>
+            {{/each}}
+          <li class="divider"></li>
+          <li>{{#link-to "metamarks.create"}}+ Add a metamark{{/link-to}}</li>
+          </ul>
+        </div>
+      </div>
+
+      {{outlet}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="metamark">
+    <div id="metamark-profile" class="col-xs-12 col-md-8">
+      {{#if delete_mode}}
+        <div id="delete-confirm">
+          <div class="alert alert-error">
+            <h4>Y U Delete?</h4>
+            <p>Are you sure you want to delete "{{name}}"?</p>
+            <span>
+              <button {{action "do_delete"}} class="btn">Yes</button>
+              <button {{action "cancel_delete"}} class="btn">No</button>
+            </span>
+          </div>
+        </div>
+      {{/if}}
+
+      <div class="alert alert-success">
+        <span>
+          <h4>{{name}}</h4>
+            <a {{bindAttr href="url"}} target="_blank">{{{ get_content }}}</a>
+          <p>{{description}}</p>
+          <p>Created {{pretty_date created_at}}</p>
+          <span>
+            <button {{action "edit"}} class="btn">Edit</button>
+            <button {{action "delete"}} class="btn">Delete</button>
+          </span> 
+      </div>
+    
+      {{outlet}}
+    </div>
+  </script>
+
+  <script type="text/x-handlebars" id="metamark/edit">
+    <div id="metamark-edit" class="alert alert-info">
+      <p><h4>Enter your metamark information:</h4></p>
+      <p>{{input value=name class="form-control" placeholder="metamark name"}}</p>
+      <p>{{input value=url class="form-control" placeholder="metamark URL"}}</p>
+      <p>{{textarea value=description class="form-control" placeholder="metamark short description..."}}</p>
+      <p><button {{action "save"}} class="btn">Save</button></p>
+    </div>
+  </script>
+
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.2.0.js"></script>
+  <script src="js/libs/ember-data.min.js"></script>
+  <script src="js/libs/localstorage_adapter.js"></script>
+  
+  <script src="js/libs/moment.min.js"></script>
+  <script src="js/libs/bootstrap.min.js"></script>
+
+  <script src="js/app.js"></script>
+
+  <!-- to activate the test runner, add the "?test" query string parameter -->
+  <script src="tests/runner.js"></script>
+</body>
+</html>
