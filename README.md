@@ -22,6 +22,7 @@ todo
 - Create tests
 - Social sharing.
 - Bookmarks import/export.
+- Add tags.
 
 About
 =====
